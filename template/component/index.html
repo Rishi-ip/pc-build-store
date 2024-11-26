@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            /* Light background */
+        }
+
+        .hero {
+            background-color: #343a40;
+            /* Dark background for hero section */
+            background-image: url();
+            color: white;
+            padding: 60px 0;
+            /* Padding for top and bottom */
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'component/Header.html' %}
+
+    <!-- <header class="hero">
+        <div class="container">
+            <h1>Welcome to PC Build Store!</h1>
+            <p>Your one-stop shop for the latest games.</p>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="#">PC Build Store</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Cart</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./productlist.html">Products</a>
+                                
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Logout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>  -->
+
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Products</h2>
+        <div class="row">
+            <!-- Example game cards -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'componentimg/Ant-Esports-205-Air-ARGB-Black.webp' %}" class="card-img-top" alt="Game 1">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Pre-Built PC </h5>
+                        <p class="card-text">Processor
+                            Intel Core I3-12100F,
+                            Motherboard
+                            ASUS PRIME H610M-E D4,
+                            Graphics Card
+                            MSI GTX 1650 D6 Ventus XS OCV3 4GB,
+                            SSD Crucial P3 1TB M.2 NVMe,
+                            Cabinet
+                            Ant Esports 205 Air ARGB (Black)</p>
+                        <!-- <a href="#" class="btn btn-primary">View Details</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'componentimg/MSI-GTX-1650-D6-Ventus-XS-OCV3-4GB.jpg' %}" class="card-img-top" alt="Game 2">
+                    <div class="card-body">
+                        <h5 class="card-title">MSI-GTX-1650</h5>
+                        <p class="card-text">Boost Clock / Memory Speed
+                            1620 MHz / 12 Gbps
+                            4GB GDDR6
+                            DisplayPort x 1 (v1.4a)
+                            HDMI™ x 1 (Supports 4K@60Hz as specified in HDMI™ 2.0b)
+                            DL-DVI-D x 1
+                        </p>
+                        <!-- <a href="#" class="btn btn-primary">View Details</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'componentimg/download_2.jpeg' %}" class="card-img-top" alt="Game 3">
+                    <div class="card-body">
+                        <h5 class="card-title">AMD Ryzen 5 4600G Processor With Radeon Graphics </h5>
+                        <p class="card-text">The AMD Ryzen 5 4600G is a 6-core, 12-thread processor based on the
+                            Zen 2 architecture, with a base clock of 3.7 GHz and a boost up to 4.2 GHz. It features
+                            Radeon Vega 7 integrated graphics, delivering decent performance for light gaming and
+                            multimedia tasks. With a 65W TDP, it offers power-efficient performance for general
+                            computing and multitasking. The processor supports DDR4 memory up to 2933 MHz and is
+                            compatible with AM4 motherboards. Ideal for budget systems, it balances CPU power and
+                            integrated graphics for everyday use.</p>
+                        <!-- <a href="#" class="btn btn-primary">View Details</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'componentimg/download_1.jpeg ' %}" class="card-img-top" alt="Game 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Intel Core I5-12400F</h5>
+                        <p class="card-text">The Intel Core i5-12400F is a 6-core, 12-thread processor based on
+                            Intel's Alder La architecture, with a base clock of 2.5 GHz and a turbo boost up to
+                            4.4 GHz. It lacks integrated graphics, requiring a discrete GPU for display output. With a
+                            65W TDP, it offers strong performance for gaming and productivity tasks. Ideal for
+                            budget-conscious users looking for excellent CPU power without the need for integrated
+                            graphics.</p>
+                        <!-- <a href="#" class="btn btn-primary">View Details</a> -->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'componentimg/download.jpeg' %}" class="card-img-top" alt="Game 3">
+                    <div class="card-body">
+                        <h5 class="card-title">MSI MEG Z790 Ace Max (Wi-Fi) (DDR5) </h5>
+                        <p class="card-text">The MSI MEG Z790 Ace Max (Wi-Fi) is a high-end ATX motherboard built
+                            for Intel's 12th and 13th Gen processors, featuring the Z790 chipset. It supports DDR5
+                            memory for faster performance and has Wi-Fi 6E for high-speed wireless connectivity.
+                            The board offers robust power delivery, extensive PCIe 5.0 support, and premium cooling
+                            features. With advanced connectivity options, including USB 3.2 Gen 2x2, it’s designed for
+                            high-performance builds and overclocking..</p>
+                        <!-- <a href="#" class="btn btn-primary">View Details</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'componentimg/download_4.jpeg' %}" class="card-img-top" alt="Game 3">
+                    <div class="card-body">
+                        <h5 class="card-title">G.Skill Trident Z5 RGB 64GB (32GBx2) DDR5 6000MHz (White)</h5>
+                        <p class="card-text">The G.Skill Trident Z5 RGB 64GB (32GBx2) DDR5 6000MHz (White) is a
+                            high-performance memory kit designed for demanding workloads and gaming. It features 32GB
+                            modules (2x32GB) with a total capacity of 64GB and operates at 6000MHz for fast data
+                            transfer. The kit is equipped with customizable RGB lighting for aesthetic appeal and
+                            features premium aluminum heat spreaders in a sleek white finish. It’s optimized for
+                            DDR5-compatible motherboards and offers excellent performance in multitasking, content
+                            creation, and gaming.</p>
+                        <!-- <a href="#" class="btn btn-primary">View Details</a> -->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'componentimg/download_5.jpeg' %}" class="card-img-top" alt="Game 3">
+                    <div class="card-body">
+                        <h5 class="card-title">LG 27GR93U-B | 27 Inch 2160p (4K) 144Hz IPS </h5>
+                        <p class="card-text">The LG 27GR93U-B is a 27-inch 4K (2160p) monitor with a 144Hz
+                            refresh rate, designed for smooth gaming and vibrant visuals. It features IPS
+                            technology for wide viewing angles and accurate color reproduction, making it ideal for both
+                            gaming and content creation. The monitor supports HDR10 for enhanced contrast and
+                            brightness. With USB-C connectivity and sleek design, it's a high-performance option for
+                            gamers and professionals alike.</p>
+                        <!-- <a href="#" class="btn btn-primary">View Details</a> -->
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'componentimg/download_6.jpeg' %}" class="card-img-top" alt="Game 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Cooler Master HAF 700 EVO ARGB (Titanium Grey) </h5>
+                        <p class="card-text">The Cooler Master HAF 700 EVO ARGB (Titanium Grey) is a premium
+                            full-tower case designed for optimal airflow and custom cooling setups. It features a bold
+                            design with ARGB lighting, a mesh front panel, and support for high-performance
+                            components. The case offers ample space for E-ATX motherboards, multiple GPUs, and
+                            extensive liquid cooling options. With modular storage, easy cable management, and a
+                            sleek titanium grey finish, it’s perfect for enthusiasts looking to build a powerful,
+                            visually striking system.</p>
+                        <!-- <a href="#" class="btn btn-primary">View Details</a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{% static 'componentimg/download_7.jpeg' %}" class="card-img-top" alt="Game 3">
+                    <div class="card-body">
+                        <h5 class="card-title">MSI MEG Ai1300P PCIE5 ATX 3.0 1300 Watt 80 Plus Platinum Fully Modular
+                        </h5>
+                        <p class="card-text">The MSI MEG Ai1300P PCIE5 ATX 3.0 1300W 80 Plus Platinum is a
+                            high-performance power supply offering 1300 watts of power with 80 Plus Platinum
+                            efficiency for energy savings. It supports PCIe 5.0 for the latest GPUs and high-end
+                            components, ensuring future-proof compatibility. The fully modular design allows for
+                            clean cable management and easy installation. With premium capacitors and robust protection
+                            features, it delivers stable and reliable power for demanding systems.</p>
+                        <!-- <a href="#" class="btn btn-primary">View Details</a> -->
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 
+            <footer class="text-center py-4" >
+                <p>&copy; 2024 Game Store. All rights reserved.</p>
+            </footer>   -->
+
+            <!-- Bootstrap JS and dependencies -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

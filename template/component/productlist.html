@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; /* Remove default margin */
+        }
+        .container {
+            padding: 0px; /* Add some padding to the container */
+        }
+        img {
+            max-width: 100px; /* Set a max width for images */
+            height: auto; /* Maintain aspect ratio */
+        }
+        @media (max-width: 576px) {
+            img {
+                max-width: 80px; /* Smaller images on smaller screens */
+            }
+            .table {
+                font-size: 0.9rem; /* Slightly smaller text for mobile */
+            }
+        }
+        .search-container {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar {
+            width: 50%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    {% include 'component/Header.html' %}
+    <div class="container">
+        <h2 class="mb-4 text-center">Product Details</h2>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchBar" class="form-control search-bar" placeholder="Search products..." onkeyup="searchTable()">
+        </div>
+
+        <table class="table table-bordered table-responsive">
+            <caption class="text-center">Product Details</caption>
+            
+            <thead class="thead-light">
+                <tr>
+                    <th>PID</th>
+                    <th>Product Name</th>
+                  
+                    <th>Product Description</th>
+                    <th>Product Price</th>
+                    <th>Product Image</th>
+                    {% if request.session.username is not None and request.session.adminemailid is None %}
+                    <th colspan="3" class="text-center">Action</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody id="productTableBody">
+                {% for p in product %}
+                <tr>
+                    <td>{{ p.pid }}</td>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.description }}</td>
+                    <td>{{ p.price }}</td>
+                    <td><img src="/{{ p.image }}" alt="{{ p.name }} Image"></td>
+
+                    {% if request.session.username is not None %}
+                    <td><a href="addcart/{{ p.pid }}" class="btn btn-success btn-sm">Add to Cart</a></td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript to filter the table based on search input -->
+    <script>
+        function searchTable() {
+            const input = document.getElementById('searchBar');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('productTableBody');
+            const rows = table.getElementsByTagName('tr');
+            
+            for (let i = 0; i < rows.length; i++) {
+                const columns = rows[i].getElementsByTagName('td');
+                let found = false;
+                
+                for (let j = 0; j < columns.length; j++) {
+                    const column = columns[j];
+                    if (column && column.textContent.toLowerCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+                
+                if (found) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
